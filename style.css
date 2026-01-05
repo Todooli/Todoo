@@ -1,0 +1,368 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* Logo */
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 25px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.check {
+    color: green;
+}
+
+/* Grille des jours */
+#week-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.day {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.day h3 {
+    text-align: center;
+}
+
+/* Tâches */
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eee;
+    padding: 6px 8px;
+    margin-bottom: 6px;
+    border-radius: 5px;
+}
+
+.task-list li.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.add-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 6px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: #45a049;
+}
+
+/* Barre de progression */
+#progress-container {
+    background: white;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+
+#progress-bar {
+    width: 100%;
+    height: 15px;
+    background: #ddd;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+#progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #4CAF50;
+    border-radius: 10px;
+}
+/* Tâche complétée : vert pâle */
+.task-list li.completed {
+    background: #c8f7c5; /* vert pâle */
+    text-decoration: line-through;
+    opacity: 1; /* on garde visible */
+}
+/* Hamburger */
+#hamburger {
+    font-size: 26px;
+    cursor: pointer;
+    margin-right: auto;
+}
+
+/* Panneau coulissant */
+#settings-panel {
+    position: fixed;
+    top: 0;
+    left: -250px; /* caché */
+    width: 250px;
+    height: 100%;
+    background: white;
+    border-right: 1px solid #ccc;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+#settings-panel.open {
+    left: 0;
+}
+
+/* Switch mode sombre */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 24px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Mode sombre */
+body.dark {
+    background: #1e1e1e;
+    color: white;
+}
+
+body.dark .day {
+    background: #2c2c2c;
+    border-color: #444;
+}
+
+body.dark #settings-panel {
+    background: #2c2c2c;
+    color: white;
+}
+
+body.dark .task-list li {
+    background: #444;
+}
+
+body.dark .task-list li.completed {
+    background: #3a6f3a;
+}
+/* MODE SOMBRE COMPLET */
+body.dark {
+    background: #1e1e1e;
+    color: #f1f1f1;
+}
+
+/* Header + logo */
+body.dark header {
+    background: #2c2c2c;
+    border-bottom-color: #444;
+}
+
+body.dark .logo .check {
+    color: #7dff7d;
+}
+
+/* Panneau paramètres */
+body.dark #settings-panel {
+    background: #2c2c2c;
+    border-right-color: #444;
+}
+
+/* Jours */
+body.dark .day {
+    background: #2c2c2c;
+    border-color: #444;
+}
+
+body.dark .day h3 {
+    color: #f1f1f1;
+}
+
+/* Tâches */
+body.dark .task-list li {
+    background: #3a3a3a;
+    color: #f1f1f1;
+}
+
+body.dark .task-list li.completed {
+    background: #3f6f3f;
+}
+
+/* Bouton ajouter */
+body.dark .add-btn {
+    background: #3f8f3f;
+}
+
+body.dark .add-btn:hover {
+    background: #2f7f2f;
+}
+
+/* Barre de progression */
+body.dark #progress-container {
+    background: #2c2c2c;
+    border-top-color: #444;
+}
+
+body.dark #progress-bar {
+    background: #444;
+}
+
+body.dark #progress-fill {
+    background: #4CAF50;
+}
+#settings-panel {
+    position: fixed;
+    top: 0;
+    left: -260px; /* un peu plus large pour éviter tout débordement */
+    width: 250px;
+    height: 100%;
+    background: white;
+    border-right: 1px solid #ccc;
+    padding: 20px;
+    box-sizing: border-box; /* évite que padding élargisse le panneau */
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+#settings-panel.open {
+    left: 0;
+}
+#settings-panel {
+    position: fixed;
+    top: 0;
+    left: -260px; /* bien caché */
+    width: 250px;
+    height: 100%;
+    background: white;
+    border-right: 1px solid #ccc;
+    padding: 20px;
+    box-sizing: border-box; /* évite tout débordement */
+    transition: left 0.3s ease;
+    z-index: 2000;
+}
+
+#settings-panel.open {
+    left: 0;
+}
+/* Conteneur horaire */
+.hourly-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hour-slot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eee;
+    padding: 6px 8px;
+    border-radius: 5px;
+}
+
+.hour-slot span {
+    font-weight: bold;
+}
+
+.hour-slot input {
+    flex: 1;
+    margin-left: 10px;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+body.dark .hour-slot {
+    background: #3a3a3a;
+    border-color: #555;
+}
+
+body.dark .hour-slot input {
+    background: #555;
+    color: white;
+    border-color: #777;
+}
+#hour-settings {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#hour-settings input {
+    width: 80px;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+body.dark #hour-settings input {
+    background: #555;
+    color: white;
+    border-color: #777;
+}
+
+#graph-panel {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#evolution-chart {
+    max-width: 100%;
+    margin: 10px auto;
+    display: block;
+}
+
+#archives-panel {
+    margin-top: 20px;
+}

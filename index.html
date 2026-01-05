@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Todoo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+    <div id="hamburger">☰</div>
+    <div class="logo">Todoo <span class="check">✓</span></div>
+</header>
+
+     <!-- Panneau paramètres -->
+    <div id="settings-panel">
+    <h2>Paramètres</h2>
+    <label class="switch">
+        <input type="checkbox" id="darkmode-toggle">
+        <span class="slider"></span>
+    </label>
+    <span>Mode sombre</span>
+    <hr>
+
+    <h3>Mode horaire</h3>
+
+    <label class="switch">
+    <input type="checkbox" id="hour-mode-toggle">
+    <span class="slider"></span>
+    </label>
+    <span>Activer le mode tâches par heure</span>
+
+    <div id="hour-settings">
+    <label>Heure de début :</label>
+    <input type="number" id="start-hour" min="0" max="23" value="8">
+
+    <label>Heure de fin :</label>
+    <input type="number" id="end-hour" min="1" max="23" value="22">
+
+     </div>
+    <hr>
+    <hr>
+<h3>Semaines précédentes</h3>
+<hr>
+<h3>Graphique d’évolution</h3>
+<button id="show-graph">Afficher le graphique</button>
+<div id="graph-panel" class="hidden">
+    <canvas id="evolution-chart" width="300" height="150"></canvas>
+</div>
+
+
+<button id="show-archives">Voir l’historique</button>
+
+<div id="archives-panel" class="hidden">
+    <h3>Historique des semaines</h3>
+    <ul id="archives-list"></ul>
+</div>
+
+    </div>
+
+    <main>
+        <div id="week-container">
+            <div class="day" data-day="lundi">
+                <h3>Lundi</h3>
+                <ul class="task-list"></ul>
+                <button class="add-btn">Ajouter une tâche</button>
+            </div>
+
+            <div class="day" data-day="mardi">
+                <h3>Mardi</h3>
+                <ul class="task-list"></ul>
+                <button class="add-btn">Ajouter une tâche</button>
+            </div>
+
+            <div class="day" data-day="mercredi">
+                <h3>Mercredi</h3>
+                <ul class="task-list"></ul>
+                <button class="add-btn">Ajouter une tâche</button>
+            </div>
+
+            <div class="day" data-day="jeudi">
+                <h3>Jeudi</h3>
+                <ul class="task-list"></ul>
+                <button class="add-btn">Ajouter une tâche</button>
+            </div>
+
+            <div class="day" data-day="vendredi">
+                <h3>Vendredi</h3>
+                <ul class="task-list"></ul>
+                <button class="add-btn">Ajouter une tâche</button>
+            </div>
+
+            <div class="day" data-day="samedi">
+                <h3>Samedi</h3>
+                <ul class="task-list"></ul>
+                <button class="add-btn">Ajouter une tâche</button>
+            </div>
+
+            <div class="day" data-day="dimanche">
+                <h3>Dimanche</h3>
+                <ul class="task-list"></ul>
+                <button class="add-btn">Ajouter une tâche</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="progress-container">
+            <p id="progress-text">Sélectionnez un jour</p>
+            <div id="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+        </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
