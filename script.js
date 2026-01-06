@@ -445,17 +445,6 @@ if (savedData.currentWeek !== thisWeek) {
 
 renderWeek();
 
-const hamburger = document.getElementById("hamburger");
-const settingsPanel = document.getElementById("settings-panel");
 
-hamburger.addEventListener("click", () => {
-    settingsPanel.classList.toggle("open");
-});
 
-// Fermer le panneau si on clique en dehors (optionnel)
-document.addEventListener("click", (e) => {
-    if (!settingsPanel.contains(e.target) && e.target !== hamburger) {
-        settingsPanel.classList.remove("open");
-    }
-});
 
