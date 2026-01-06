@@ -366,3 +366,72 @@ body.dark #hour-settings input {
 #archives-panel {
     margin-top: 20px;
 }
+/* ============================
+   MODE MOBILE
+   ============================ */
+@media (max-width: 600px) {
+
+    /* Le conteneur des jours passe en colonne */
+    #week-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .day {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Les boutons "Ajouter une tâche" */
+    .add-btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    /* Le panneau paramètres */
+    #settings-panel {
+        width: 90%;
+        right: 5%;
+        left: 5%;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 15px;
+    }
+
+    /* Inputs horaires */
+    #hour-settings input {
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    /* Graphique */
+    #evolution-chart {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Boutons dans paramètres */
+    #show-archives,
+    #show-graph {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+}
+#settings-panel.open {
+    transform: translateX(0);
+}
+@media (max-width: 600px) {
+    h3 {
+        font-size: 1.1rem;
+    }
+    .day h3 {
+        font-size: 1.2rem;
+    }
+}
+
